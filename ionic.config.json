@@ -1,0 +1,7 @@
+{
+  "name": "GerEstudo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
