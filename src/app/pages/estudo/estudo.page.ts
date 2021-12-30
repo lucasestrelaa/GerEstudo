@@ -38,13 +38,24 @@ export class EstudoPage implements OnInit {
     private toastCtrl: ToastController
   ) { 
     this.materiaSubscription = this.materiaService.getMaterias().subscribe(data => {
+      
       this.materias = data;
     });
     this.conteudoSubscription = this.conteudoService.getConteudos().subscribe(data => {
+      
       this.conteudos = data;
     });
+    
     this.estudoId = this.activatedRoute.snapshot.params['id'];
     if (this.estudoId) this.loadEstudo();
+  }
+  matC(idmat){
+    console.log("filtrou");
+    this.conteudoSubscription = this.conteudoService.getConteudos().subscribe(data => {
+      const matSelecionada = materias => materias.id === idmat;
+
+      this.conteudos = data.filter(matSelecionada);
+    });
   }
 
   ngOnInit() {
