@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons (click)="voltar()" slot="start">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-buttons>
+        <ion-title>Revisões</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-list *ngIf="!revisoes.length">
+        <ion-item *ngFor="let item of [0, 1, 2]">
+            <ion-avatar slot="start">
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-avatar>
+            <ion-label>
+                <h3>
+                    <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+                </h3>
+                <p>
+                    <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                </p>
+                <p>
+                    <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+                </p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-item-sliding *ngFor="let revisao of revisoes">
+            <ion-item button [routerLink]="['/revisao', revisao.id]">
+                <!--<ion-avatar slot="start">
+  <img [src]="revisao.picture">
+</ion-avatar>-->
+
+                <ion-label>
+                    {{ revisao.idmat }}
+                    <!-- <p>{{ revisao.especialidade }}</p>
+            <p>{{ revisao.uf }}</p> -->
+                </ion-label>
+
+                <!-- <ion-note color="primary" slot="end" *ngIf="revisao.telefone">{{ revisao.telefone }}</ion-note> -->
+            </ion-item>
+
+            <ion-item-options side="end">
+                <ion-item-option color="danger" (click)="deleteRevisao(revisao.id)">
+                    <ion-icon slot="top" name="trash"></ion-icon>
+                    Excluir
+                </ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="success" href="/revisao">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

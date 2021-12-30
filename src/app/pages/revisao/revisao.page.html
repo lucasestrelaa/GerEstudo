@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons (click)="voltar()" slot="start">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-buttons>
+        <ion-title>revisao</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+
+        <ion-label>Materia</ion-label>
+        <ion-select [(ngModel)]="revisao.idmat">
+            <ion-select-option *ngFor="let materia of materias" value="{{materia.id}}">{{ materia.nome }}</ion-select-option>
+        </ion-select>
+        <ion-label>Conteúdo</ion-label>
+        <ion-select [(ngModel)]="revisao.idconteudo">
+            <ion-select-option *ngFor="let conteudo of conteudos" value="{{conteudo.id}}">{{ conteudo.nome }}</ion-select-option>
+        </ion-select>
+        <ion-item>
+            <ion-input type="date" [(ngModel)]="revisao.data" placeholder="Responsável"></ion-input>
+        </ion-item>
+        <ion-item>
+
+            <ion-input type="time" [(ngModel)]="revisao.tempo" placeholder="Responsável"></ion-input>
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-button color="success" (click)="saveRevisao()" expand="block">
+            Salvar Revisão
+        </ion-button>
+    </ion-toolbar>
+</ion-footer>

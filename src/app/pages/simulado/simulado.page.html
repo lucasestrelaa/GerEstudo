@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons (click)="voltar()" slot="start">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-buttons>
+        <ion-title>simulado</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="simulado.nome" placeholder="Nome"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="simulado.orgao" placeholder="orgao"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="number" [(ngModel)]="simulado.numero" placeholder="numero do simulado"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="number" [(ngModel)]="simulado.questoes" placeholder="questoes"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="number" [(ngModel)]="simulado.qstc" onchange="calcula()" placeholder="certas "></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="number" [(ngModel)]="simulado.qste " onchange="calcula()" placeholder="erradas "></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="number" [(ngModel)]="simulado.qstb " onchange="calcula()" placeholder="brancas "></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="number" [(ngModel)]="simulado.media " placeholder="media " readonly></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="number" [(ngModel)]="simulado.pontLiquida " placeholder="pontuação líquida "></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="date" [(ngModel)]="simulado.data " placeholder="data "></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="time" [(ngModel)]="simulado.tempo " placeholder="tempo "></ion-input>
+        </ion-item>
+
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-button color="success " (click)="saveSimulado() " expand="block ">
+            Salvar Simulado
+        </ion-button>
+    </ion-toolbar>
+</ion-footer>

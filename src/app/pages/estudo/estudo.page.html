@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons (click)="voltar()" slot="start">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-buttons>
+        <ion-title>estudo</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-label>Materia</ion-label>
+    <ion-select [(ngModel)]="estudo.idmat">
+        <ion-select-option *ngFor="let materia of materias" value="{{materia.id}}">{{ materia.nome }}</ion-select-option>
+    </ion-select>
+    <ion-label>Conteúdo</ion-label>
+    <ion-select [(ngModel)]="estudo.idconteudo">
+        <ion-select-option *ngFor="let conteudo of conteudos" value="{{conteudo.id}}">{{ conteudo.nome }}</ion-select-option>
+    </ion-select>
+    <ion-item>
+        <ion-input type="date" [(ngModel)]="estudo.data" placeholder="Responsável"></ion-input>
+    </ion-item>
+    <ion-item>
+
+        <ion-input type="time" [(ngModel)]="estudo.tempo" placeholder="Responsável"></ion-input>
+    </ion-item>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-button color="success" (click)="saveEstudo()" expand="block">
+            Salvar Estudo
+        </ion-button>
+    </ion-toolbar>
+</ion-footer>

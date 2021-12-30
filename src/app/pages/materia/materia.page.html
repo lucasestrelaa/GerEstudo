@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons (click)="voltar()" slot="start">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-buttons>
+        <ion-title>Matéria</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="materia.nome" placeholder="Nome"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="materia.descricao" placeholder="Descrição"></ion-input>
+        </ion-item>
+        <!-- <ion-item>
+        <ion-input type="text" [(ngModel)]="materia.endereco" placeholder="Endereço"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" [(ngModel)]="materia.cep" placeholder="CEP"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" [(ngModel)]="materia.responsavel" placeholder="Responsável"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" [(ngModel)]="materia.uf" placeholder="UF"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" [(ngModel)]="materia.telefone1" placeholder="Telefone 1"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" [(ngModel)]="materia.telefone2" placeholder="Telefone 2"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" [(ngModel)]="materia.telefone3" placeholder="Telefone 3"></ion-input>
+    </ion-item> -->
+        <!-- <ion-item>
+        <ion-input type="text" [(ngModel)]="materia.observacoes" placeholder="Observações"></ion-input>
+    </ion-item> -->
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-button color="success" (click)="saveMateria()" expand="block">
+            Salvar materia
+        </ion-button>
+    </ion-toolbar>
+</ion-footer>
