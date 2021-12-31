@@ -30,7 +30,7 @@ npm-debug.log*
 /plugins
 /www
 /node_modules/*
-/angular/cache/*
+.angular/cache/*
 .angular/cache/angular-webpack/4100c8753522931fa33f0b435f62492bd6d0650b/0.pack
 .angular/cache/angular-webpack/4100c8753522931fa33f0b435f62492bd6d0650b/1.pack
 .angular/cache/angular-webpack/4100c8753522931fa33f0b435f62492bd6d0650b/2.pack
